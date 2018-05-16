@@ -1,0 +1,8 @@
+{
+  "name": "elite-schedule-app",
+  "app_id": "de2bbacf",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
