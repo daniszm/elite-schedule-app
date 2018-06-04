@@ -24,8 +24,10 @@ export class TeamDetailPage {
   ionViewDidLoad() {
     this.team = this.navParams.data;
 
-    // this.tourneyData = 
-    // Add Third-party Library: Lodash 2:20
+    this.tourneyData = this.eliteApi.getCurrentTourney();
+    this.games = _.chain(this.tourneyData.games)
+    .filter(g => g.team1Id === this.team.id || g.team2Id === this.team.id)
+    .value();
   }
 
 }

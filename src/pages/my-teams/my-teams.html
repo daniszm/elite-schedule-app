@@ -10,10 +10,18 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-    <p>You are not currently following any teams.</p>
-    <p>First select tournament, then you can follow teams.</p>
+    <!-- <p>You are not currently following any teams.</p>
+    <p>First select tournament, then you can follow teams.</p> -->
+
+    <ion-list>
+        <ion-list-header>Followed Teams</ion-list-header>
+        <button ion-item *ngFor="let item of favorites" (click)="favouriteTapped($event, item)">
+            <ion-icon name="star"></ion-icon>
+            {{item.team.name}}
+        </button>
+    </ion-list>
 
     <button ion-button full (click)="goToTournaments()">Find a Tournament</button>
 
